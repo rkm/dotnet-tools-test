@@ -24,9 +24,11 @@ jobs:
 
     install:
       - dotnet tool update --global JetBrains.ReSharper.GlobalTools --version 2020.2.2
+      - dotnet tool update --global dotnet-format --version=4.1.131201
 
     before_script:
       - jb cleanupcode dotnet-tools-test.sln
+      - dotnet format --check dotnet-tools-test.sln
 
     script:
       - dotnet build
