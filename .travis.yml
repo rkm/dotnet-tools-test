@@ -26,7 +26,6 @@ jobs:
       - dotnet tool update --global JetBrains.ReSharper.GlobalTools --version 2020.2.2
 
     before_script:
-      - echo $PATH
       - jb cleanupcode dotnet-tools-test.sln
 
     script:
