@@ -10,6 +10,10 @@ jobs:
       directories:
         - $HOME/.dotnet
 
+    env:
+      - DOTNET_CLI_TELEMETRY_OPTOUT=1
+      - $PATH=$PATH:$HOME/.dotnet/tools
+
     before_install:
       - wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
       - sudo dpkg -i packages-microsoft-prod.deb
@@ -22,6 +26,7 @@ jobs:
       - dotnet tool update --global JetBrains.ReSharper.GlobalTools --version 2020.2.2
 
     before_script:
+      - echo $PATH
       - jb cleanupcode
 
     script:
