@@ -17,8 +17,8 @@ jobs:
         path: $HOME/.dotnet
         key: foo
     - name: Install dependencies
-      run: dotnet tool update --global JetBrains.ReSharper.GlobalTools --version 2020.2.2 
+      run: dotnet tool update --global JetBrains.ReSharper.GlobalTools --version 2020.2.2
     - name: Build
-      run: dotnet build --configuration Release --no-restore
+      run: dotnet build
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test
