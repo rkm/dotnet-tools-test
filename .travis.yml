@@ -1,0 +1,20 @@
+
+os: linux
+language: generic
+
+jobs:
+  include:
+
+    cache:
+      directories:
+        - $HOME/.dotnet
+
+    install:
+      - dotnet tool update --global JetBrains.ReSharper.GlobalTools --version 2020.2.2
+
+    before_script:
+      - jb cleanupcode
+
+    script:
+      - dotnet build
+      - dotnet test
