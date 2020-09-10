@@ -27,7 +27,7 @@ jobs:
 
     before_script:
       - echo $PATH
-      - jb cleanupcode
+      - jb cleanupcode dotnet-tools-test.sln
 
     script:
       - dotnet build
